@@ -2,18 +2,20 @@ server:
   port: 8081
 
 spring:
+  main:
+    banner-mode: off
   application:
     name: ASTON-SERVICE
   cloud:
     config:
       uri: http://localhost:8889
-  main:
-    banner-mode: off
+
   datasource:
     url: jdbc:postgresql://localhost:5432/aston?currentSchema=public
     username: postgres
     password: admin
     driver-class-name: org.postgresql.Driver
+
   jpa:
     hibernate:
       ddl-auto: none
@@ -22,14 +24,18 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
+
   liquibase:
     enabled: true
     change-log: classpath:db/db.changelog-master.yaml
+
   kafka:
+
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-
+#    bootstrap-servers:
+#      - localhost:9094
 app:
   kafka:
     bootstrap-servers: localhost:9094
