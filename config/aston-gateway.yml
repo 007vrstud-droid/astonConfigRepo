@@ -4,9 +4,11 @@ server:
 spring:
   application:
     name: ASTON-GATEWAY
+  main:
+    banner-mode: off
   cloud:
     config:
-      uri: http://localhost:8889
+      uri: http://localhost:8881
     gateway:
       routes:
         - id: astonService
