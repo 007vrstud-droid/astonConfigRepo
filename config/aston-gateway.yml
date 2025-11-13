@@ -6,7 +6,7 @@ spring:
     name: ASTON-GATEWAY
   cloud:
     config:
-      uri: http://localhost:8888
+      uri: http://localhost:8889
     gateway:
       routes:
         - id: astonService

@@ -6,7 +6,7 @@ spring:
     name: ASTON-SERVICE
   cloud:
     config:
-      uri: http://localhost:8888
+      uri: http://localhost:8889
   main:
     banner-mode: off
   datasource:
